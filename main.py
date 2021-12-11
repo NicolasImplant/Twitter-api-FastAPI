@@ -98,7 +98,7 @@ def login():
     tags= ['Users']
 )
 
-def show_users():
+def show_all_users():
     pass
 
 @app.get(
@@ -112,7 +112,7 @@ def show_users():
 def show_a_user():
     pass
 
-@app.post(
+@app.delete(
     path='/users/{user_id}/delete',
     response_model= User,
     status_code= status.HTTP_200_OK,

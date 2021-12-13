@@ -2,9 +2,10 @@
 from pydantic import BaseModel, EmailStr, Field
 
 # FastAPI
-from fastapi import FastAPI, status
+from fastapi import FastAPI, status, Body
 
 # Python
+import json
 from uuid import UUID
 from datetime import date, datetime
 from typing import Optional, List
@@ -45,7 +46,7 @@ class UserLogin(UserBase):
         max_length=64
         )
  
-class UserRegister(UserBase):
+class UserRegister(User):
     password: str = Field(
         ...,
         min_length=8,
@@ -80,7 +81,8 @@ class Tweet(BaseModel):
     summary= 'Register a User',
     tags=['Users'])
 
-def signup():
+def signup(user: UserRegister = Body(...)):
+
     '''
     Signup a user
 
@@ -97,10 +99,16 @@ def signup():
         - frist_name: String
         - Brith_date: datetime
     '''
+    with open('users.json', 'r+', encoding='utf-8') as f:
+        results = json.loads(f.read())
+        user_dict = user.dict()
+        user_dict['user_id'] = str(user_dict['user_id'])
+        user_dict['birth_date'] = str(user_dict['birth_date'])
+        results.append(user_dict)
+        f.seek(0)
+        f.write(json.dumps(results))
 
-
-
-    pass
+    return user
 
 ### LogIn a user
 @app.post(

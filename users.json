@@ -1,0 +1,42 @@
+[
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "Nicolas@implant.com",
+        "first_name": "Nicolas",
+        "last_name": "Implant",
+        "birth_date": "2021-12-13",
+        "password": "Holisoynico"
+    },
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "Nicolas@implant.com",
+        "first_name": "Nicolas",
+        "last_name": "Implant",
+        "birth_date": "2021-12-13",
+        "password": "Holisoynico"
+    },
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "Isabelli@linda.com",
+        "first_name": "Isabella",
+        "last_name": "Pati\u00f1o",
+        "birth_date": "2021-12-13",
+        "password": "Holisoyisa"
+    },
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "Isabelli@linda.com",
+        "first_name": "Isabella",
+        "last_name": "Pati\u00f1o",
+        "birth_date": "2021-12-13",
+        "password": "Holisoyisa"
+    },
+    {
+        "user_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "email": "Nathalia@morales.com",
+        "first_name": "Nathalia",
+        "last_name": "Morales",
+        "birth_date": "2021-12-13",
+        "password": "holasoynata"
+    }
+]   

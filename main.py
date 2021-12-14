@@ -1,4 +1,5 @@
 # Pydantic
+from fastapi.param_functions import Form
 from pydantic import BaseModel, EmailStr, Field
 
 # FastAPI
@@ -9,6 +10,8 @@ import json
 from uuid import UUID
 from datetime import date, datetime
 from typing import Optional, List
+
+from pydantic.errors import EmailError
 
 
 
@@ -119,8 +122,19 @@ def signup(user: UserRegister = Body(...)):
     tags=['Users']
 )
 
-def login():
-    pass
+def login(
+    user_email: EmailStr = Form(...),
+    user_password: str = Form(...) 
+):
+    with open('users.json', 'r', encoding='UTF-8') as f:
+        all_users: list = json.loads(f.read())
+        found: dict = None
+        for user in all_users:
+            if user_email == user['email'] and user_password == user['password']:
+                found = user
+                return found
+            else:
+                return found
 
 ### Show all users
 @app.get(
